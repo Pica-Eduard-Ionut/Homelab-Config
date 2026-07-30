@@ -1,0 +1,10 @@
+[Unit]
+Description=Run homelab power saving tweaks 10 seconds after boot
+
+[Timer]
+OnBootSec=10s
+Unit=homelab_powersaving.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Apply power saving tweaks at boot
+After=multi-user.target
+Wants=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/homelab_powersaving/screen_off.sh
+ExecStart=/opt/homelab_powersaving/bluetooth_off.sh
+ExecStart=/opt/homelab_powersaving/disable_nvidia_gpu.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
