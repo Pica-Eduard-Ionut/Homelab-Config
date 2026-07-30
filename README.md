@@ -2,4 +2,5 @@
 Personal Fedora Server 44 homelab configs: power optimization, systemd automation, and split DNS for *.homelab.com.
 
 ## Content
-- [Power Saving](scripts/powersaving/README.md)
+- [Power Saving](/server/scripts/powersaving/README.md)
+- [Homelab Networking](/server/homelab-networking/README.md)

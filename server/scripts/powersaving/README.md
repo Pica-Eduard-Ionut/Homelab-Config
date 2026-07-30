@@ -4,6 +4,7 @@
 Automatically disables Bluetooth, NVIDIA GPU, and screen after idle periods to save power. Runs via systemd timer.
 
 ## Install
+The install script was designed with the contents of this folder inside `/home/user/scripts/powersaving`, where `user` is the currently logged in user.
 
 ```bash
     sudo ./install_powersaving_service.sh
