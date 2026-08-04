@@ -1,0 +1,6 @@
+[Unit]
+Description=Run SMART disk health check per boot
+
+[Service]
+Type=oneshot
+ExecStart=/opt/homelab_smartcheck/smartcheck.sh

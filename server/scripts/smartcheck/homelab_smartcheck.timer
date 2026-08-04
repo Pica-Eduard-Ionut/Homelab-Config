@@ -1,0 +1,10 @@
+[Unit]
+Description=Run homelab SMART check 30 seconds after boot
+
+[Timer]
+OnBootSec=30s
+Unit=homelab_smartcheck.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target
