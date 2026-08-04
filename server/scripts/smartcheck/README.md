@@ -4,7 +4,7 @@
 
 Automatically runs a SMART health check on `/dev/sda` after system startup and saves the output to a log file. Runs via a systemd timer.
 
-The SMART check runs 10 seconds after boot and stores the output in `/opt/homelab_smartcheck/logs/`.
+The SMART check runs 30 seconds after boot and stores the output in `/opt/homelab_smartcheck/logs/`.
 
 ## Install
 
@@ -25,7 +25,7 @@ This copies the SMART check script to `/opt/homelab_smartcheck/`, creates the lo
 
 ### Systemd:
 
-* `homelab_smartcheck.timer` - Runs the SMART check 10 seconds after system boot.
+* `homelab_smartcheck.timer` - Runs the SMART check 30 seconds after system boot.
 * `homelab_smartcheck.service` - Executes the SMART check script.
 
 ## Logs
