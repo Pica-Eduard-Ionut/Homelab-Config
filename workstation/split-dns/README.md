@@ -13,6 +13,11 @@ This was done mostly follwing RedHat tutorials like [configuring_and_managing_ne
 
 ### Create the connection:
 ```bash
+sudo nmcli connection add type dummy ifname homelab-dns con-name homelab-dns
+```
+
+### Configure homelab dummy connection
+```bash
 sudo nmcli connection modify homelab-dns \
     ipv4.method manual \
     ipv4.addresses 192.168.1.254/32 \
