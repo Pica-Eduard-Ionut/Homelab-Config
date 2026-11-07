@@ -1,14 +1,13 @@
 #!/bin/bash
 
 GPU="0000:01:00.0"
-DRIVER="/sys/bus/pci/drivers/nouveau"
 
-# Make sure the GPU is available for runtime power management
-echo auto > "/sys/bus/pci/devices/$GPU/power/control"
+# Wake the PCIe device up first
+echo on > "/sys/bus/pci/devices/$GPU/power/control"
+sleep 1
 
-# Bind the GPU to nouveau if it is not already bound
-if [ ! -e "$DRIVER/$GPU" ]; then
-    echo "$GPU" > "$DRIVER/bind"
-fi
+# Load the nouveau driver back into memory.
+# It will automatically bind to the GPU.
+modprobe nouveau
 
-echo "NVIDIA GPU enabled and bound to nouveau"
+echo "NVIDIA GPU driver loaded and ready."
