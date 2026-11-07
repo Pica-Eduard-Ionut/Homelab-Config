@@ -5,12 +5,17 @@ Automatically disables Bluetooth, NVIDIA GPU, and screen after idle periods to s
 
 ## Install
 The install script was designed with the contents of this folder inside `/home/user/scripts/powersaving`, where `user` is the currently logged in user.
-
 ```bash
     sudo ./install_powersaving_service.sh
 ```
 
 This copies scripts to /opt/homelab_powersaving/ and sets up a systemd timer.
+
+Also disable stop nouveau from locking the display framebuffer.
+```bash
+    sudo bash -c 'echo "options nouveau modeset=0" > /etc/modprobe.d/nouveau-kms.conf'
+    sudo dracut -f
+```
 
 ## Files
 ### Scripts (`/opt/homelab_powersaving/`):
