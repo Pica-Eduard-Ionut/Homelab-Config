@@ -103,8 +103,13 @@ Edit `/etc/caddy/Caddyfile` using `sudo nano /etc/caddy/Caddyfile`
 import Caddyfile.d/*.caddyfile
 
 console.homelab.com {
-        tls internal
-        reverse_proxy localhost:9090
+    tls internal
+    reverse_proxy https://localhost:9090 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+        header_up Host {host}
+    }
 }
 
 ```
